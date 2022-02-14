@@ -6,7 +6,7 @@ on:
 env:
   AZURE_SUBSCRIPTION: b0e04a4a-a321-4b66-b8fd-13715262ba3c
   SPRING_CLOUD_SERVICE: demo-mtc-appdev-scloud-sc1
-  KEYVAULT: yuchenkv # customize this
+  KEYVAULT: demomtcappdevscloudkv1 # customize this
   # ==== APPS ====:
   API_GATEWAY: api-gateway
   ADMIN_SERVER: admin-server
@@ -36,12 +36,12 @@ jobs:
         secrets: "AZURE-CREDENTIALS-FOR-SPRING"
       id: keyvaultaction
     
-    - name: Get MySQL Secrets from Key Vault
-      uses: Azure/get-keyvault-secrets@v1
-      with:
-        keyvault: ${{ env.KEYVAULT }}
-        secrets: "MYSQL-SERVER-FULL-NAME,MYSQL-DATABASE-NAME,MYSQL-SERVER-ADMIN-LOGIN-NAME,MYSQL-SERVER-ADMIN-PASSWORD"
-      id: mysqlsecrets
+#    - name: Get MySQL Secrets from Key Vault
+#      uses: Azure/get-keyvault-secrets@v1
+#      with:
+#        keyvault: ${{ env.KEYVAULT }}
+#        secrets: "MYSQL-SERVER-FULL-NAME,MYSQL-DATABASE-NAME,MYSQL-SERVER-ADMIN-LOGIN-NAME,MYSQL-SERVER-ADMIN-PASSWORD"
+#      id: mysqlsecrets
       
     - name: Login with Service SP
       uses: azure/login@v1
