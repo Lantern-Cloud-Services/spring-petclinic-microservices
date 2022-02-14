@@ -1,5 +1,6 @@
 name: Deploy to Azure Spring Cloud with Key Vault
-on: [push]
+#on: [push]
+workflow_dispatch:
 
 env:
   AZURE_SUBSCRIPTION: 799c12ba-353c-44a1-883d-84808ebb2216 # customize this
